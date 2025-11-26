@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Optimización de Rutas con Programación Dinámica</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="js/main.js" defer></script>
+</head>
+
+<body class="bg-gray-100">
+
+  <div class="container mx-auto p-6">
+    <h1 class="text-3xl font-bold mb-4">Optimización de Rutas (DAG) usando Programación Dinámica</h1>
+
+    <!-- Formulario -->
+    <div class="bg-white p-4 rounded shadow">
+      <h2 class="text-xl mb-2 font-semibold">Ingresar aristas (rutas)</h2>
+
+      <form id="form-arista" class="flex gap-3 mb-4">
+        <input id="nodoA" type="text" placeholder="Nodo A" class="border p-2 rounded w-1/5">
+        <input id="nodoB" type="text" placeholder="Nodo B" class="border p-2 rounded w-1/5">
+        <input id="tiempo" type="number" placeholder="Tiempo (min)" class="border p-2 rounded w-1/5">
+        <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Agregar</button>
+      </form>
+
+      <h3 class="text-lg font-semibold mt-4">Aristas agregadas:</h3>
+      <ul id="listaAristas" class="list-disc ml-6"></ul>
+
+      <!-- Selección de nodos -->
+      <div class="mt-4">
+        <label class="block">Nodo inicial:</label>
+        <input id="nodoInicio" class="border p-2 rounded w-1/3">
+
+        <label class="block mt-2">Nodo destino:</label>
+        <input id="nodoFin" class="border p-2 rounded w-1/3">
+      </div>
+
+      <!-- Botón calcular -->
+      <button onclick="calcularRuta()" class="mt-4 bg-green-600 text-white px-4 py-2 rounded">
+        Calcular Ruta Óptima
+      </button>
+    </div>
+
+    <!-- Resultado -->
+    <div class="bg-white p-4 mt-6 rounded shadow">
+      <h2 class="text-xl font-semibold">Resultado</h2>
+      <p id="resultado" class="mt-2 text-lg"></p>
+      <p id="rutaOptima" class="text-md font-bold text-blue-700"></p>
+    </div>
+
+    <!-- Mapa -->
+    <div id="map" class="w-full h-96 mt-6 rounded shadow"></div>
+  </div>
+
+  <!-- Google Maps API -->
+  <script 
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6jZgsV7yceusG1YfHAGaowIBP0EAQTSM&callback=initMap" 
+    async defer>
+  </script>
+
+</body>
+</html>
