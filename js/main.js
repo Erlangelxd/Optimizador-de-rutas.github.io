@@ -154,3 +154,6 @@ function dibujarRutaEnMapa(ruta) {
     strokeWeight: 5
   });
 }
+
+window.initMap = initMap;
+
